@@ -76,7 +76,7 @@ from random import shuffle
 '''
 
 # Balancing from filtered dataset
-file = open('filteredset.csv', 'r', encoding='utf8')
+file = open('filteredalphaset.csv', 'r', encoding='utf8')
 data = []
 [data.append(row) for row in csv.reader(file, delimiter=',')]
 
@@ -122,7 +122,7 @@ for row in payload:
 print(categories)
 
 
-with open('balancedset.csv', 'w', newline='', encoding='utf8') as f:
+with open('balancedalphaset.csv', 'w', newline='', encoding='utf8') as f:
     writer = csv.writer(f)
     for row in balanced_data:
         writer.writerow(row)
