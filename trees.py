@@ -79,18 +79,17 @@ classifiers = [("decision tree", tree.DecisionTreeClassifier()),
                ("extra tress regressor", ExtraTreesRegressor(max_features=1))]
 
 for alg in classifiers:
+    name, algorithm = alg
+
     print("="*80)
-    print("Training {}..".format(alg[0]))
+    print("Training {}..".format(name))
     
     # train on train data
-    clf = alg[1].fit(X, Y)
+    clf = algorithm.fit(X, Y)
 
     print("Predicting values...")
     # predict on testing data
     predicted = clf.predict(X_test)
 
-    # print(predicted)
-
     accuracy = (np.sum(predicted==Y_test))/len(Y_test)
-    print("Final accuracy: {0:.2f}\n".format(accuracy*100))
-    
+    print("Accuracy: {0:.2f}%\n".format(accuracy*100))
