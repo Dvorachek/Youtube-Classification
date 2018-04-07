@@ -12,7 +12,7 @@ def main():
         categories[i] = 0
 
     for row in data[1:]:
-        categories[int(row[4])] += 1
+        categories[int(row[0])] += 1
         
     category_count = []
     for key, item in categories.items():
@@ -40,9 +40,9 @@ def main():
         categories[i] = 0
 
     for row in payload:
-        if categories[int(row[4])] < avg:
+        if categories[int(row[0])] < avg:
             balanced_data.append(row)
-            categories[int(row[4])] += 1
+            categories[int(row[0])] += 1
         
     print(categories)
 

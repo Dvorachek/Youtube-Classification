@@ -29,17 +29,17 @@ def main():
 	#concatenating title, tags and description and add to list. Add category number to Y vector.
 	cnt = 0	
 	for row in trainX:
-		string = str(row[2]) + ' ' + str(row[6]) + ' ' + str(row[15])
+		string = str(row[1]) + ' ' + str(row[2]) + ' ' + str(row[3])
 		examples.append(string)
-		trainY[cnt] = int(row[4])
+		trainY[cnt] = int(row[0])
 		cnt += 1
 
 	docs_new = []	
 	cnt = 0
 	for row in testX:
-		string = str(row[2]) + ' ' + str(row[6]) + ' ' + str(row[15])
+		string = str(row[1]) + ' ' + str(row[2]) + ' ' + str(row[3])
 		docs_new.append(string)
-		testY[cnt] = int(row[4])
+		testY[cnt] = int(row[0])
 		cnt += 1	
 
 	#put our data together in sklearn 'bunch'
