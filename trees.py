@@ -105,7 +105,7 @@ for i in range(10):
     print('training')
     
     multi, bernoulli = NB.main()
-    svm1, svm2 = SVM.main()
+    linearSVC, SVC = SVM.main()
     averages['MultinomialNB'].append(multi)
     averages['BernoulliNB'].append(bernoulli)
     averages['linearSVC'].append(linearSVC)
