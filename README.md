@@ -5,7 +5,6 @@ The video's title, tags and description are used in the classification.
 See report PDF for more information
 ## How To Use
 Clone the repo and then extract **filteredset.7z** from the datasets folder and move it into the same location as *run_tests.py*.
-NaiveBayes_classification.py, SVM_classificaion.py and shuffle_balance.py must be in the same directory as run_tests.py.
 
 Type python3 run_tests.py to execute.
 
