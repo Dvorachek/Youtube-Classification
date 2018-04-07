@@ -2,8 +2,8 @@ import numpy as np
 import csv
 import sklearn.datasets
 import shuffle_balance as shuffle
-#import NaiveBayes_classification as NB
-#import SVM_classification as SVM
+import NaiveBayes_classification as NB
+import SVM_classification as SVM
 
 
 averages = {'decision tree': [],
@@ -11,8 +11,8 @@ averages = {'decision tree': [],
             'extra tress regressor': [],
             'MultinomialNB': [],
             'BernoulliNB': [],
-            'SVM1': [],
-            'SVM2': []}
+            'linearSVC': [],
+            'SVC': []}
 
 for i in range(10):
     print("iteration: {}".format(i+1))
@@ -104,12 +104,13 @@ for i in range(10):
     
     print('training')
     
-   # multi, bernoulli = NB.main()
-   # svm1, svm2 = SVM.main()
-   # averages['MultinomialNB'].append(multi)
-   # averages['BernoulliNB'].append(multi)
-   # averages['SVM1'].append(multi)
-   # averages['SVM2'].append(multi)
+    multi, bernoulli = NB.main()
+    svm1, svm2 = SVM.main()
+    averages['MultinomialNB'].append(multi)
+    averages['BernoulliNB'].append(bernoulli)
+    averages['linearSVC'].append(linearSVC)
+    averages['SVC'].append(SVC)
+    #'''
     for alg in classifiers:
         name, algorithm = alg
 
