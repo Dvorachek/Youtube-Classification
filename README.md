@@ -10,16 +10,16 @@ Type python3 run_tests.py to execute.
 
 This will take a long time as it runs seven different algorithms, ten times each, while shuffling the data each time.
 ## Results
-LinearSVC: 97.19%
+LinearSVC: 85.52%
 
-SVC: 96.89%
+SVC: 84.20%
 
-Random Forests: 94.89%
+Random Forests: 73.00%
 
-Decision Tree: 93.94%
+Decision Tree: 69.18%
 
-Bernoulli Naive Bayes: 93.83%
+Bernoulli Naive Bayes: 78.26%
 
-Multinomial Naive Bayes: 90.29%
+Multinomial Naive Bayes: 69.17%
 
-Extra Trees Regressor: 83.45%
+Extra Trees Regressor: 14.96%
