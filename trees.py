@@ -23,14 +23,17 @@ text = []
 #concatenating title, tags and description and add to list. Add category number to Y vector.
 cnt = 0	
 for row in trainX:
-    examples.append("{} {} {}".format(row[2], row[6], row[15]))
+    #examples.append("{} {} {}".format(row[2], row[6], row[15]))
+    examples.append("{}".format(row[15]))
     trainY[cnt] = int(row[4])
     cnt += 1
 
 docs_new = []	
 cnt = 0
 for row in testX:
-    docs_new.append("{} {} {}".format(row[2], row[6], row[15]))
+    #print(row[6])
+    #docs_new.append("{} {} {}".format(row[2], row[6], row[15]))
+    docs_new.append("{}".format(row[15]))
     testY[cnt] = int(row[4])
     cnt += 1	
 
@@ -72,10 +75,12 @@ Y = trainY
 X_test = X_new_tfidf
 Y_test = testY
 
+#'''
+
 #tree init..     name            classifier
 classifiers = [("decision tree", tree.DecisionTreeClassifier()),
                ("random forests", RandomForestClassifier(max_features=1)),
-               ("random forest regressor", RandomForestRegressor(max_features=1)),
+               #("random forest regressor", RandomForestRegressor(max_features=1)),
                ("extra tress regressor", ExtraTreesRegressor(max_features=1))]
 
 for alg in classifiers:
@@ -93,3 +98,4 @@ for alg in classifiers:
 
     accuracy = (np.sum(predicted==Y_test))/len(Y_test)
     print("Accuracy: {0:.2f}%\n".format(accuracy*100))
+#'''
