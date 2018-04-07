@@ -14,7 +14,7 @@ averages = {'decision tree': [],
             'SVM1': [],
             'SVM2': []}
 
-for i in range(2):
+for i in range(10):
     print("iteration: {}".format(i+1))
     print("shuffling..")
     shuffle.main()
@@ -135,7 +135,7 @@ for key, val in averages.items():
     
     try:
         acc = sum(val)/len(val)*100
-        print("{}: {0:.2f} %".format(key, acc))
+        print("{}: {}%".format(key, acc))
     except:
         print("{} goofed".format(key))
 
