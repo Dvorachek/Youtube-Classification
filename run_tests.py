@@ -42,18 +42,18 @@ for i in range(10):
     #concatenating title, tags and description and add to list. Add category number to Y vector.
     cnt = 0	
     for row in trainX:
-        examples.append("{} {} {}".format(row[2], row[6], row[15]))
+        examples.append("{} {} {}".format(row[1], row[2], row[3]))
         #examples.append("{}".format(row[15]))
-        trainY[cnt] = int(row[4])
+        trainY[cnt] = int(row[0])
         cnt += 1
 
     docs_new = []	
     cnt = 0
     for row in testX:
         #print(row[6])
-        docs_new.append("{} {} {}".format(row[2], row[6], row[15]))
+        docs_new.append("{} {} {}".format(row[1], row[2], row[3]))
         #docs_new.append("{}".format(row[15]))
-        testY[cnt] = int(row[4])
+        testY[cnt] = int(row[0])
         cnt += 1	
 
     from sklearn.feature_extraction.text import CountVectorizer
