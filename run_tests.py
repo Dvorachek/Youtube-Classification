@@ -1,9 +1,9 @@
 import numpy as np
 import csv
 import sklearn.datasets
-import shuffle_balance as shuffle
-import NaiveBayes_classification as NB
-import SVM_classification as SVM
+from scripts import shuffle_balance as shuffle
+from scripts import NaiveBayes_classification as NB
+from scripts import SVM_classification as SVM
 
 
 averages = {'decision tree': [],
@@ -106,11 +106,12 @@ for i in range(10):
     
     multi, bernoulli = NB.main()
     linearSVC, SVC = SVM.main()
+
     averages['MultinomialNB'].append(multi)
     averages['BernoulliNB'].append(bernoulli)
     averages['linearSVC'].append(linearSVC)
     averages['SVC'].append(SVC)
-    #'''
+    
     for alg in classifiers:
         name, algorithm = alg
 
